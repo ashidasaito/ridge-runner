@@ -23,7 +23,7 @@
 // the modelled slippage and by constant-product price impact against that bar's pool depth, so size
 // costs: a trade worth a USDC meets the factor 1 + a/D1 (+ a/D2 for a SOL-quoted asset's SOL/USDC leg),
 // and the orders of one symbol at one open together pay what their sum would. Every bar carries the
-// pool depth at its open and at its close (o_depth, c_depth: USDC raw units per hop); the fills a batch
+// pool depth at its open and its close (o_depth, c_depth: USDC raw units per hop); the fills a batch
 // carries were priced at its bars' o and o_depth. state.depthAt(symbol) is the latest close's depth,
 // the best guess at the next open's, and state.impactBps(symbol, amount) what a trade worth amount
 // would pay there; max_slippage_bps bounds the move from the latest close, the slippage and the
