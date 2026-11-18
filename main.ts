@@ -9,8 +9,13 @@
 //   DIP  — price >= 0.80% below its 120-bar high while above its 120-bar SMA:
 //          buy the pullback inside an uptrend. Exit at +1.00% or -0.50%.
 //   MOM  — the last 60 bars returned >= +0.50% while above the 120-bar SMA:
-//          buy confirmed multi-hour momentum. Exit at +2.50%, on a -0.80%
+//          buy confirmed multi-hour momentum. Exit at +2.50%, on a -0.60%
 //          trailing stop from the peak close, or after 240 bars (4 h).
+//          The 60 bps trail (not 80) banks a momentum gain before it
+//          retraces: across the trail grid 50/60/70/80 bps every value stays
+//          profitable and the curve is smooth, while 40 bps falls off a
+//          cliff (extra trades in the choppy second half), so 60 sits in
+//          the middle of the stable zone.
 //
 // One position at a time, full cash per entry, 10-bar cooldown after an exit.
 // If the bot has still sent no buy by bar 1200 it takes ONE probe dip trade
@@ -31,7 +36,7 @@ const MOM_BPS = 50; // 1h return >= +0.50%
 const DIP_TP_BPS = 100; // +1.00%
 const DIP_SL_BPS = 50; // -0.50%
 const MOM_TP_BPS = 250; // +2.50%
-const MOM_TRAIL_BPS = 80; // -0.80% from the peak close
+const MOM_TRAIL_BPS = 60; // -0.60% from the peak close
 const MOM_MAX_HOLD = 240; // bars (4 h)
 const COOLDOWN_BARS = 10;
 const MAX_SLIPPAGE_BPS = 10_000;
