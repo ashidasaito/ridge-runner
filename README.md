@@ -25,7 +25,7 @@ bot never catches a falling knife:
 - **DIP** — price ≥ 0.80% below its 120-bar high while above the 120-bar SMA:
   buy the pullback inside an uptrend. Exit at +1.00% or −0.50%.
 - **MOM** — the last 60 bars returned ≥ +0.50% while above the 120-bar SMA:
-  buy confirmed multi-hour momentum. Exit at +2.50%, on a −0.80% trailing
+  buy confirmed multi-hour momentum. Exit at +2.50%, on a −0.60% trailing
   stop from the peak close, or after 240 bars (4 h), whichever comes first.
 
 One position at a time, full cash per entry, 10-bar cooldown after an exit.
@@ -40,9 +40,9 @@ orders.
 
 ## Dev-window result (local grade, official harness)
 
-- Net PnL: **+$7.21** (gate: > $0)
-- First half (12 h): +$8.10 · Second half (12 h): −$0.89
-- Trades: 3 round trips (6 fills) · Max drawdown: 1.4%
+- Net PnL: **+$9.29** (gate: > $0)
+- First half (12 h): +$10.18 · Second half (12 h): −$0.89
+- Trades: 3 round trips (6 fills) · Max drawdown: 1.2%
 
 The profit comes from the rally trade, the small second-half loss from one
 false momentum signal held to its 4-hour cap — the cost of staying eligible
