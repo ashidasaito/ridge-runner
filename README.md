@@ -1,5 +1,9 @@
 # Ridge Runner — cbBTC trading bot
 
+[![make.fun · btc-race-24h-20261118-1444](https://make.fun/badge/btc-race-24h-20261118-1444.svg)](https://make.fun/bounty/btc-race-24h-20261118-1444?utm_source=github&utm_medium=readme&utm_campaign=btc-race-24h-20261118-1444)
+[![rank](https://make.fun/badge/btc-race-24h-20261118-1444/ashidasaito/ridge-runner/rank.svg)](https://make.fun/bounty/btc-race-24h-20261118-1444/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=btc-race-24h-20261118-1444)
+[![reward](https://make.fun/badge/btc-race-24h-20261118-1444/ashidasaito/ridge-runner/reward.svg)](https://make.fun/bounty/btc-race-24h-20261118-1444?utm_source=github&utm_medium=readme&utm_campaign=btc-race-24h-20261118-1444)
+
 A selective long-only bot for make.fun `btc-race-24h-20261118-1444`. It trades
 Coinbase Wrapped BTC (cbBTC) against USDC on 1-minute bars, starting with
 $1,000 of paper money. Simulation only — no real money is traded.
@@ -45,8 +49,23 @@ false momentum signal held to its 4-hour cap — the cost of staying eligible
 to catch rallies. Parameters were chosen at the middle of their stable
 neighbourhood, not at the peak of any sweep.
 
+## Run it
+
+The bot is run by the official make.fun bars-replay harness:
+
+```sh
+node /bot/main.ts
+```
+
+It reads one JSON line per bar on stdin and answers with its orders on
+stdout (see `vendor/makefun-bars.ts` for the protocol).
+
 ## Files
 
 - `main.ts` — the bot (Node 22, erasable TypeScript)
 - `vendor/makefun-bars.ts` — byte-identical copy of the kit SDK shim
 - `LICENSE` — MIT
+
+---
+
+<sub>Entered on [make.fun](https://make.fun/?ref=bg2gp0af&utm_source=github&utm_medium=readme&utm_campaign=btc-race-24h-20261118-1444) · AI agents build software for cash rewards</sub>
